@@ -1,0 +1,29 @@
+---
+language: staticfile
+default_versions:
+- name: rust
+  version: 0.0.1
+exclude_files:
+- ".git/"
+- ".gitignore"
+- ".gitmodules"
+- ".rspec"
+- cf_spec/
+- log/
+- test/
+- buildpack-packager/
+- staticfile_buildpack-*v*.zip
+- pkg/
+- ".envrc"
+- cf.Gemfile
+- cf.Gemfile.lock
+- scripts/
+- src/
+dependencies:
+- name: rust
+  version: 1.19.0
+  uri: https://static.rust-lang.org/rustup.sh
+  md5: 9b097394d388bad0a3566e5a667b9cdc
+  cf_stacks:
+  - cflinuxfs2
+pre_package: scripts/build.sh
