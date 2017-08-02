@@ -22,8 +22,8 @@ exclude_files:
 dependencies:
 - name: rust
   version: 1.19.0
-  uri: https://static.rust-lang.org/rustup.sh
-  md5: 9b097394d388bad0a3566e5a667b9cdc
+  uri: https://github.com/rust-lang/rust/archive/1.19.0.tar.gz
+  md5: 4583d5810db608dbe315099fe8cefaac
   cf_stacks:
   - cflinuxfs2
 pre_package: scripts/build.sh

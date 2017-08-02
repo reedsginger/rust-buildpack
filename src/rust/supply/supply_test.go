@@ -65,16 +65,16 @@ var _ = Describe("Supply", func() {
 		Expect(err).To(BeNil())
 	})
 
-	Describe("InstallNginx", func() {
+	Describe("InstallRust", func() {
 		BeforeEach(func() {
-			dep := libbuildpack.Dependency{Name: "nginx", Version: "99.99"}
+			dep := libbuildpack.Dependency{Name: "rust", Version: "99.99"}
 
-			mockManifest.EXPECT().DefaultVersion("nginx").Return(dep, nil)
+			mockManifest.EXPECT().DefaultVersion("rust").Return(dep, nil)
 			mockManifest.EXPECT().InstallDependency(dep, depDir)
 		})
 
 		It("Installs nginx to the depDir, creating a symlink in <depDir>/bin", func() {
-			Expect(supplier.InstallNginx()).To(Succeed())
+			Expect(supplier.InstallRust()).To(Succeed())
 			Expect(buffer.String()).To(ContainSubstring("-----> Installing nginx"))
 			Expect(buffer.String()).To(ContainSubstring("       Using nginx version 99.99"))
 

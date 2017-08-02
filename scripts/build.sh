@@ -7,5 +7,5 @@ BINDIR=$ROOTDIR/bin
 export GOPATH=$ROOTDIR
 export GOOS=linux
 
-go build -o $BINDIR/supply staticfile/supply/cli
-go build -o $BINDIR/finalize staticfile/finalize/cli
+go build -o $BINDIR/supply rust/supply/cli
+go build -o $BINDIR/finalize rust/finalize/cli
